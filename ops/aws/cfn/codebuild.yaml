@@ -1,0 +1,120 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: 'External website CloudFormation templates'
+
+# Metadata:
+
+Parameters:
+  ThisCodeBuildName:
+    Type: String
+    Default: groundedit-external-website
+    Description: The name of the stack.
+
+# Mappings:
+#   set of mappings
+
+# Conditions:
+#   set of conditions
+
+# Transform:
+#   set of transforms
+
+Resources:
+  ThisCodeBuildRole:
+    # Description: 'Creating service role in IAM for AWS CodeBuild'
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Action: sts:AssumeRole
+          Effect: Allow
+          Principal:
+            Service: codebuild.amazonaws.com
+      Path: /
+      RoleName: !Join
+        - '-'
+        - - !Ref 'AWS::StackName'
+          - ThisCodeBuild
+    Type: AWS::IAM::Role
+
+  ThisCodebuild:
+    Type: AWS::CodeBuild::Project
+    Properties: 
+      Artifacts: 
+        Type: NO_ARTIFACTS
+      BadgeEnabled: false
+      Cache: 
+        Location: groundedit-codebuild-cache/external-website/node_modules
+        Type: S3
+      # Description: String
+      # EncryptionKey: String
+      Environment: 
+        # Certificate: String
+        ComputeType: BUILD_GENERAL1_SMALL
+        EnvironmentVariables: 
+          - Name: TARGET_S3_BUCKET
+            Type: PLAINTEXT
+            Value: groundedit-external-website
+        Image: aws/codebuild/amazonlinux2-x86_64-standard:1.0
+        ImagePullCredentialsType: CODEBUILD
+        PrivilegedMode: false
+        # RegistryCredential: 
+        #   RegistryCredential
+        Type: LINUX_CONTAINER
+      # LogsConfig: 
+      #   LogsConfig
+      Name: !Ref ThisCodeBuildName
+      QueuedTimeoutInMinutes: 16
+      # SecondaryArtifacts: 
+      #   - Artifacts
+      # SecondarySources: 
+        # - Auth: 
+        #     Resource: String
+        #     Type: String
+        #   BuildSpec: String
+        #   GitCloneDepth: Integer
+        #   GitSubmodulesConfig: 
+        #     GitSubmodulesConfig
+        #   InsecureSsl: Boolean
+        #   Location: String
+        #   ReportBuildStatus: Boolean
+        #   SourceIdentifier: String
+        #   Type: String
+      # SecondarySourceVersions: 
+      #   - ProjectSourceVersion
+      ServiceRole: !Ref ThisCodeBuildRole
+      Source: 
+          Auth: 
+            Type: OAUTH
+          BuildSpec: String
+          # GitCloneDepth: Integer
+          # GitSubmodulesConfig: 
+          #   GitSubmodulesConfig
+          # InsecureSsl: Boolean
+          Location: https://github.com/grounded-it-solutions/external-website.git
+          ReportBuildStatus: false
+          SourceIdentifier: groundedit_github_external_website
+          Type: GITHUB
+      # SourceVersion: String
+      Tags: 
+        - Key: Product
+          Value: External Website
+      TimeoutInMinutes: 5
+      Triggers: 
+        Webhook: true
+        FilterGroups: 
+          # WebhookFilter: true
+          # ExcludeMatchedPattern: Boolean
+          # Pattern: String
+          - - Type: EVENT
+              Pattern: PUSH
+      # VpcConfig: 
+      #   VpcConfig
+
+
+Outputs:
+  ThisCodeBuild:
+    Description: External website CodeBuild project
+    Value: External website CodeBuild project
+    Export:
+      Name: ExternalWebsiteCodeBuild

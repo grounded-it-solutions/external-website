@@ -1,0 +1,34 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+# Description:
+#   String
+
+# Metadata:
+#   template metadata
+
+Parameters:
+  StackName:
+    Type: String
+    Default: external-website
+    Description: The name of the stack.
+
+# Mappings:
+#   set of mappings
+
+# Conditions:
+#   set of conditions
+
+# Transform:
+#   set of transforms
+
+Resources:
+  ExternalWebsiteCodeBuild:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://grit-cfn-templates.s3.amazonaws.com/external-website/codebuild.yaml
+      # Parameters:
+      #   EnvironmentName: !Ref StackName
+
+# Outputs:
+#   set of outputs
