@@ -12,11 +12,9 @@ phases:
       - npm ci # npm ci installs packages referenced in the package-lock.json, effectively freezing the packages that are installed to specific versions.
       - npm install -g gatsby-cli
   build:
-    run-as: Linux-user-name
     commands:
       - gatsby build
   post_build:
-    run-as: Linux-user-name
     commands:
       - aws s3 sync ./public/ "s3://${TARGET_S3_BUCKET}" --acl=public-read --delete
 
