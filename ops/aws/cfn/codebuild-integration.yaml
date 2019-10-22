@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters: 
+  EnvironmentTypeParameter: 
+    Type: String
+    Default: integration
+    AllowedValues: 
+      - integration
+      - production
+    Description: Enter integration or production.
+
+Metadata:
+  Generator: "former2"
+Description: ""
+Resources:
+  codebuild205b814:
+    Type: "AWS::CodeBuild::Project"
+    Properties:
+      Name: !Sub 'groundedit-external-website-${EnvironmentTypeParameter}'
+      Source: 
+        BuildSpec: ""
+        InsecureSsl: false
+        Location: "https://github.com/grounded-it-solutions/external-website.git"
+        ReportBuildStatus: false
+        Type: "GITHUB"
+      Artifacts: 
+        Type: "NO_ARTIFACTS"
+      Cache: 
+        Location: !Sub "groundedit-codebuild-cache/external-website-${EnvironmentTypeParameter}/node_modules"
+        Type: "S3"
+      Environment: 
+        ComputeType: "BUILD_GENERAL1_SMALL"
+        EnvironmentVariables: 
+        - 
+          Name: "TARGET_S3_BUCKET"
+          Type: "PLAINTEXT"
+          Value: !Sub "groundedit-external-website-${EnvironmentTypeParameter}"
+        Image: "aws/codebuild/amazonlinux2-x86_64-standard:1.0"
+        ImagePullCredentialsType: "CODEBUILD"
+        PrivilegedMode: false
+        Type: "LINUX_CONTAINER"
+      ServiceRole: "arn:aws:iam::784211183538:role/ew-ExternalWebsiteCodeBuild-1FZXJYK0Z6MLB-ThisCodeBuild"
+      TimeoutInMinutes: 5
+      QueuedTimeoutInMinutes: 16
+      EncryptionKey: "arn:aws:kms:us-east-1:784211183538:alias/aws/s3"
+      Tags: 
+      - 
+        Key: "Product"
+        Value: "External Website"
+      BadgeEnabled: false

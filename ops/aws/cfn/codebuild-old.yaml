@@ -21,7 +21,7 @@ Parameters:
 #   set of transforms
 
 Resources:
-  ThisCodeBuildRole:
+  ThisCodeBuildRole: # Need to refactor this role to allow access to necessary services during execution
     # Description: 'Creating service role in IAM for AWS CodeBuild'
     Properties:
       AssumeRolePolicyDocument:
@@ -86,7 +86,7 @@ Resources:
       Source: 
           Auth: 
             Type: OAUTH
-          BuildSpec: String
+          BuildSpec: buildspec.yaml
           # GitCloneDepth: Integer
           # GitSubmodulesConfig: 
           #   GitSubmodulesConfig

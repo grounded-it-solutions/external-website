@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters: 
+  EnvironmentTypeParameter: 
+    Type: String
+    Default: integration
+    AllowedValues: 
+      - integration
+      - production
+    Description: Enter integration or production.
+
+Metadata:
+  Generator: "former2"
+Description: ""
+Resources:
+  S3:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: !Sub "groundedit-external-website-${EnvironmentTypeParameter}"
+      WebsiteConfiguration: 
+        IndexDocument: "index.html"
+        ErrorDocument: "404.html"
