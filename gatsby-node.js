@@ -24,18 +24,7 @@ exports.createPages = ({ actions }) => {
           theBlogPostDirectories.forEach(aBlogPostDirectory => {
             const blogPostMetadata = require(`${__dirname}/src/markdown/blogPosts/${aBlogPostDirectory}/meta.js`)
             const blogPostContent = require(`${__dirname}/src/markdown/blogPosts/${aBlogPostDirectory}/content.js`)
-            console.log(JSON.stringify(blogPostContent, null, 2))
-            // markdownHtmlConverter.makeMarkdown().
-            // jsxHtmlConverter().
-      
-            // readfile, get json metadata
-            // readfile, get markdown file, generate html, generate jsx components
-            // pass json metadata and jsx components to create page
-            // const blogPostInHtml = converter.makeHtml(text);
-            // let aBlogPostPath = path.join(__dirname, aBlogPostDirectory)
-      
               const {createPage} = actions
-              console.log(blogPostMetadata.title)
               createPage({
                 path: `${blogPostMetadata.title}`,
                 component: path.resolve('./src/templates/blogposts.js'),
