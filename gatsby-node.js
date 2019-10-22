@@ -27,15 +27,14 @@ exports.createPages = ({ actions }) => {
             theBlogPostDirectories.forEach(aBlogPostDirectory => {
               const blogPostMetadata = require(`${__dirname}/src/markdown/blogPosts/${aBlogPostDirectory}/meta.js`)
               const blogPostContent = require(`${__dirname}/src/markdown/blogPosts/${aBlogPostDirectory}/content.js`)
+              const blogPostContentHtml = converter.makeHtml(blogPostContent)
                 const {createPage} = actions
                 createPage({
                   path: `${blogPostMetadata.title}`,
                   component: path.resolve('./src/templates/blogposts.js'),
-                  // The context is passed as props to the component as well
-                  // as into the component's GraphQL query.
                   context: {
                     meta: blogPostMetadata,
-                    content: blogPostContent
+                    content: blogPostContentHtml
                   },
                 })
             });
