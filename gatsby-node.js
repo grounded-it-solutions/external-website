@@ -4,8 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
-
 const blogPostDirectories = './src/markdown/blogPosts';
 const fs = require('fs');
 const path = require('path')
@@ -30,7 +28,7 @@ exports.createPages = ({ actions }) => {
               const blogPostContentHtml = converter.makeHtml(blogPostContent)
                 const {createPage} = actions
                 createPage({
-                  path: `${blogPostMetadata.title}`,
+                  path: `blog/${blogPostMetadata.title}`,
                   component: path.resolve('./src/templates/blogposts.js'),
                   context: {
                     meta: blogPostMetadata,
