@@ -61,4 +61,7 @@ typings/
 .next
 
 # redux cache
-.cache
+.cache/
+
+# bundles
+public/
