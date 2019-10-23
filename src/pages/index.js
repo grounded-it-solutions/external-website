@@ -12,6 +12,8 @@ const IndexPage = () => (
     <Link to="/trainings">Trainings</Link>
     <br />
     <Link to="/solutions">Solutions</Link>
+    <br />
+    <Link to="/blog-rollup">Blog Rollup</Link>
     <div>
       <Image src={require(`../images/logo.png`)}/>
     </div>
