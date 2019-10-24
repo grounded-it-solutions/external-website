@@ -23,18 +23,23 @@ exports.createPages = ({ actions }) => {
           while (theBlogPostDirectories.length > blogsParsed) {
             console.log(`Parsing ${theBlogPostDirectories[blogsParsed]}`)
             theBlogPostDirectories.forEach(aBlogPostDirectory => {
-              const blogPostMetadata = require(`${__dirname}/src/markdown/blogPosts/${aBlogPostDirectory}/meta.js`)
-              const blogPostContent = require(`${__dirname}/src/markdown/blogPosts/${aBlogPostDirectory}/content.js`)
-              const blogPostContentHtml = converter.makeHtml(blogPostContent)
+              if(aBlogPostDirectory == 'meta.js') {
+                // do nothing
+              } else {
+                const blogPostMetadata = require(`${__dirname}/src/markdown/blogPosts/${aBlogPostDirectory}/meta.js`)
+                const blogPostContent = require(`${__dirname}/src/markdown/blogPosts/${aBlogPostDirectory}/content.js`)
+                const blogPostContentHtml = converter.makeHtml(blogPostContent)
                 const {createPage} = actions
                 createPage({
-                  path: `blog/${blogPostMetadata.title}`,
+                  // path: `blog/${blogPostMetadata.title}`,
+                  path: `blog/${aBlogPostDirectory}`, // directory should be the title of the post
                   component: path.resolve('./src/templates/blogposts.js'),
                   context: {
                     meta: blogPostMetadata,
                     content: blogPostContentHtml
                   },
                 })
+              }
             });
             blogsParsed++
           }

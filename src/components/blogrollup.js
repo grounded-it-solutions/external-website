@@ -1,22 +1,27 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from "react-redux"
+import { getBlogs } from '../state/actions'
 
-const BlogRollup = ({blogs, getBlogs}) => {
+const BlogRollup = ({blogs, getBlogs, initialBlogRollupLoad, toggleInitialBlogRollupLoad}) => {
+  if(initialBlogRollupLoad) {
+    console.log('initial load')
+    getBlogs()
+    toggleInitialBlogRollupLoad()
+  }
+  
   return (
     <div>
-      blog rollup
-      <br />
-      <button onClick={getBlogs}>Get Blogs</button>
-      <br />
+      <React.Fragment>
       {blogs.length > 0 ?
         blogs.map((blog, index) => {
           return (
-            <pre key={index}>{JSON.stringify(blog)}</pre>
+            <a href={`/blog/${blog.title}`} key={index}>{blog.title}</a>
           )
         })
-        : "Blogs are loading..."
+        : "No blog posts yet."
       }
+      </React.Fragment>
     </div>
   )
 }
@@ -26,12 +31,19 @@ const BlogRollup = ({blogs, getBlogs}) => {
 //   getBlogs: PropTypes.func.isRequired,
 // }
 
-const mapStateToProps = ({ blogs }) => {
-  return { blogs }
+const mapStateToProps = ({ blogs, initialBlogRollupLoad }) => {
+  return { 
+    blogs,
+    initialBlogRollupLoad 
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-  return { getBlogs: () => dispatch({ type: `GET_BLOGS` }) }
+  return { 
+    // getBlogs: () => dispatch({ type: `GET_BLOGS`, }),
+    getBlogs: () => dispatch(getBlogs()),
+    toggleInitialBlogRollupLoad: () => dispatch({ type: `TOGGLE_INITIAL_BLOG_ROLLUP_LOAD`, })
+  }
 }
 
 const ConnectedBlogRollup = connect(
