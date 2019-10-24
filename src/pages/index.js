@@ -8,11 +8,6 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Link to="/trainings">Trainings</Link>
-    <br />
-    <Link to="/solutions">Solutions</Link>
-    <br />
-    <Link to="/blog">Blog</Link>
     <div>
       <Image src={require(`../images/logo.png`)}/>
     </div>
