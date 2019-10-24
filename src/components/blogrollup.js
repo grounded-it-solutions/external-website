@@ -2,10 +2,10 @@ import React from 'react'
 // import PropTypes from 'prop-types';
 import { connect } from "react-redux"
 import { getBlogs } from '../state/actions'
+import BlogRollupItem from './blogrollupitem'
 
 const BlogRollup = ({blogs, getBlogs, initialBlogRollupLoad, toggleInitialBlogRollupLoad}) => {
   if(initialBlogRollupLoad) {
-    console.log('initial load')
     getBlogs()
     toggleInitialBlogRollupLoad()
   }
@@ -16,7 +16,7 @@ const BlogRollup = ({blogs, getBlogs, initialBlogRollupLoad, toggleInitialBlogRo
       {blogs.length > 0 ?
         blogs.map((blog, index) => {
           return (
-            <a href={`/blog/${blog.title}`} key={index}>{blog.title}</a>
+            <BlogRollupItem key={blog.title} {...blog}/>
           )
         })
         : "No blog posts yet."
