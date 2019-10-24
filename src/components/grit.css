@@ -1,10 +1,31 @@
+/*
+#94A6E8 = logo blue, lighter
+#4D6EE3 = logo blue
+#3C55B0 = logo blue, darker
+#404763 = logo blue, darker, deep grey-blue
+#223063 = logo blue, darkest, basically navy blue
+#
+*/
+
+.navItem {
+  display: block;
+  float: left;
+  margin-right: 1em;
+}
+
+.navImage {
+  max-height: 2em;
+  max-width: 2em
+}
+
+.topNav > a {
+  display: table;
+  font-size: 1em;
+  font-weight: bold;
+}
+
 .blogRollupItem {
   border: 0.2em solid grey;
   margin: 0.5em;
   padding: 0.5em;
-}
-
-.topNav > a {
-  font-weight: bold;
-  margin-right: 1em;
 }
