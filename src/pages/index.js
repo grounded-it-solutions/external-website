@@ -21,6 +21,9 @@ const IndexPage = () => (
         </div>
       </Link>
     </section>
+    <section>
+      Maybe insert something here describing GrIT.
+    </section>
     <div>
       <ConnectedBlogRollup limit={5} />
     </div>

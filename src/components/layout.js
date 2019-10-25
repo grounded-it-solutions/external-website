@@ -27,7 +27,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
@@ -36,7 +35,10 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main>
+          {children}
+        </main>
         <footer>
           <SiteMap />
         </footer>
