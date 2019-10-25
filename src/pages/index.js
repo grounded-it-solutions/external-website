@@ -21,8 +21,9 @@ const IndexPage = () => (
         </div>
       </Link>
     </section>
-    <section>
-      Maybe insert something here describing GrIT.
+    <section className="textCalloutSection">
+      <h2>IT, Pragmatically.</h2>
+      <h5>Grounded IT Solutions meets you where you’re at, wherever you’re at, with no bias towards one solution or another. Blah blah blah</h5>
     </section>
     <div>
       <ConnectedBlogRollup limit={3} />

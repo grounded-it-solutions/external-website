@@ -14,6 +14,20 @@
 #E3BB4D = logo blue, light brown
 */
 
+.infoSection {
+  text-align: left;
+  padding: 2em;
+  background-color: white;
+  opacity: 80%;  
+}
+
+.textCalloutSection {
+  text-align: center;
+  padding: 2em;
+  background-color: white;
+  opacity: 80%;
+}
+
 .topNavBuffer {
   padding-top: 2.5em;
 }
@@ -90,9 +104,15 @@
 }
 
 .topNav a {
+  color: #243D96;
   font-size: 1em;
   font-weight: bold;
+  text-decoration: none;
 }
+
+/* .topNav a:hover {
+  background-color: #E3BB4D;
+} */
 
 .topNav {
   padding: 0.5em;
@@ -100,9 +120,7 @@
   display: block;
   overflow: auto;
   position: fixed;
-  /* height: 400px; */
   background-color: white;
-  /* clear: both; */
 }
 
 .blogRollupItem {
