@@ -16,13 +16,52 @@
 
 .gridWrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  background-color: #E3BB4D;
-  color: #708FFF;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+}
+
+.gridWrapper h1 {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  float: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gridWrapper a {
+  text-decoration: none;
 }
 
 .gridBox {
   margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  height: 300px;
+  padding: 1em;
+}
+
+.libraryBackground {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url(../images/ancient-antique-architectural-design-442420.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.coffeeBackground {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url(../images/aroma-bean-beverage-279819.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .navItem {

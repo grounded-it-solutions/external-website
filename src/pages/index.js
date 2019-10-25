@@ -10,12 +10,16 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <section className="gridWrapper">
-      <div className="gridBox">
-        <Image src={require(`../images/logo.png`)}/>
-      </div>
-      <div className="gridBox">
-        <Image src={require(`../images/logo.png`)}/>
-      </div>
+      <Link to="/solutions">
+        <div className="gridBox libraryBackground">
+          <h1>Codify Your Infrastructure</h1>
+        </div>
+      </Link>
+      <Link to="/trainings">
+        <div className="gridBox coffeeBackground">
+          <h1>Take an Online Training</h1>
+        </div>
+      </Link>
     </section>
     <div>
       <ConnectedBlogRollup limit={5} />
