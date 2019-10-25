@@ -9,8 +9,12 @@ import ConnectedBlogRollup from "../components/blogrollup"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <section className="textCalloutSection">
+      <h2>IT, Pragmatically.</h2>
+      <h5>Grounded IT Solutions meets you where you’re at, wherever you’re at, with no bias towards one solution or another. Blah blah blah</h5>
+    </section>
     <section className="gridWrapper">
-      <Link to="/solutions">
+      <Link to="/services">
         <div className="gridBox libraryBackground">
           <h1>Codify Your Infrastructure</h1>
         </div>
@@ -20,10 +24,6 @@ const IndexPage = () => (
           <h1>Take an Online Training</h1>
         </div>
       </Link>
-    </section>
-    <section className="textCalloutSection">
-      <h2>IT, Pragmatically.</h2>
-      <h5>Grounded IT Solutions meets you where you’re at, wherever you’re at, with no bias towards one solution or another. Blah blah blah</h5>
     </section>
     <div>
       <ConnectedBlogRollup limit={3} />
