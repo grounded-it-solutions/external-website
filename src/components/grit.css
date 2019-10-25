@@ -14,6 +14,18 @@
 #E3BB4D = logo blue, light brown
 */
 
+.topNavBuffer {
+  padding-top: 2.5em;
+}
+
+.gritLogoBackground {
+  background-image: url(../images/grit-logo/website-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: lighten;
+  background-color: #94A6E8;
+}
+
 .gridWrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -74,6 +86,7 @@
   max-height: 2em;
   max-width: 2em;
   margin-bottom: 0;
+  padding-top: 0.1em;
 }
 
 .topNav a {
@@ -82,12 +95,13 @@
 }
 
 .topNav {
-  margin: 0.5em;
+  padding: 0.5em;
   width: 100%;
   display: block;
   overflow: auto;
+  position: fixed;
   /* height: 400px; */
-  /* background-color: #404763; */
+  background-color: white;
   /* clear: both; */
 }
 
