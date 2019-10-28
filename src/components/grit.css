@@ -14,6 +14,16 @@
 #E3BB4D = logo blue, light brown
 */
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .gridBanner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -40,10 +50,12 @@
   padding: 0.5em;
   box-shadow: 0.2em 0.2em 0.2em #967415;
   text-shadow: 1px 1px 1px black;
+  transition: background-color 0.4s;
 }
 
 .bannerContent button:hover {
   color: white;
+  transition: background-color 0.4s;
   background-color: #967415;
   font-weight: bold;
   border: 1px solid;
