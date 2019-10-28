@@ -33,8 +33,7 @@ const Layout = ({ children }) => {
             margin: `0 auto`,
             maxWidth: '100%',
             padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-            scrollBehavior: 'smooth'
+            paddingTop: 0
           }}
         >
           <Header siteTitle={data.site.siteMetadata.title} />

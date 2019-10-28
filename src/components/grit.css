@@ -144,6 +144,14 @@ hr {
   padding: 1em;
 }
 
+.gridBox h1 {
+  text-decoration: none;
+}
+
+.gridBox h1:hover {
+  text-decoration: underline;
+}
+
 .libraryBackground {
   background-image: 
     linear-gradient(
