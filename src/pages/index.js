@@ -9,6 +9,13 @@ import ConnectedBlogRollup from "../components/blogrollup"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <section className="gridBanner deskBackground banner">
+      <div className="bannerContent">
+        <h1>Grounded IT</h1>
+        <h3>Pragmatic IT freelancing services and online trainings to help you get ahead</h3>
+        <button>Offerings</button>
+      </div>
+    </section>
     <section className="textCalloutSection">
       <h2>IT, Pragmatically.</h2>
       <h5>Grounded IT Solutions meets you where you’re at, wherever you’re at, with no bias towards one solution or another. Blah blah blah</h5>
