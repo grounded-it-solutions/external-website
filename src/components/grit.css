@@ -24,6 +24,10 @@ html {
   }
 }
 
+hr {
+  color: #E3BB4D;
+}
+
 .gridBanner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

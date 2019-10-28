@@ -16,11 +16,18 @@ const IndexPage = () => (
         <Link to="#offerings"><button>Offerings</button></Link>
       </div>
     </section>
-    <section className="textCalloutSection">
-      <h2>IT, Pragmatically.</h2>
-      <h5>Grounded IT Solutions meets you where you’re at, wherever you’re at, with no bias towards one solution or another. Blah blah blah</h5>
+    <section className="textCalloutSection sectionTitle">
+      <h2>Latest Articles</h2>
+      <hr />
     </section>
-    <section id="offerings" className="gridWrapper">
+    <div>
+      <ConnectedBlogRollup limit={3} />
+    </div>
+    <section id="offerings" className="textCalloutSection sectionTitle">
+      <h2>Offerings</h2>
+      <hr />
+    </section>
+    <section className="gridWrapper">
       <Link to="/services">
         <div className="gridBox libraryBackground">
           <h1>Codify Your Infrastructure</h1>
@@ -32,9 +39,7 @@ const IndexPage = () => (
         </div>
       </Link>
     </section>
-    <div>
-      <ConnectedBlogRollup limit={3} />
-    </div>
+
   </Layout>
 )
 
