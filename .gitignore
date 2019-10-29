@@ -64,5 +64,5 @@ typings/
 .cache/
 
 # bundles
-public/
+public/*
 !public/index.html
