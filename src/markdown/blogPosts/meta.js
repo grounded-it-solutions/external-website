@@ -8,7 +8,7 @@ export default
   {
     "title": "blog-2",
     "published": "2016-10-21T14:39:58+0000",
-    "description": "test description"
+    "description": "test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long "
   },
   {
     "title": "blog-3",
@@ -33,6 +33,6 @@ export default
   {
     "title": "blog-7",
     "published": "2019-10-21T14:39:58+0000",
-    "description": "test description"
+    "description": "test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long test description long v"
   }
 ]

@@ -19,7 +19,7 @@ const BlogRollup = ({blogs, getBlogs, initialBlogRollupLoad, toggleInitialBlogRo
     blogs = blogs.slice(0,limit)
 
   return (
-    <div>
+    <div className="blogRollup">
       <React.Fragment>
       {blogs.length > 0 ?
         blogs.map(blog => {
@@ -32,7 +32,7 @@ const BlogRollup = ({blogs, getBlogs, initialBlogRollupLoad, toggleInitialBlogRo
       </React.Fragment>
       <React.Fragment>
         {limit ?
-          <Link className="right" to="/blog">Read more...</Link>
+          <Link className="readMore" to="/blog">Read more...</Link>
           : ""
         }
       </React.Fragment>
