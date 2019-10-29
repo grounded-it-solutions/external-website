@@ -9,7 +9,7 @@ const Nav = () => {
       <div className="navItem"><Link to="/">Home</Link></div>
       <div className="navItem"><Link to="/services">Services</Link></div>
       <div className="navItem"><Link to="/trainings">Trainings</Link></div>
-      <div className="navItem"><Link to="/blog">Blog</Link></div>
+      <div className="navItem" style={{display: 'none'}}><Link to="/blog">Blog</Link></div>
       <div className="navItem"><Link to="/about">About</Link></div>
     </nav>
   )

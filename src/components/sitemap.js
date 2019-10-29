@@ -8,10 +8,10 @@ const SiteMap = () => {
       <hr />
       <div className="left">
         <div className="navItem"><Link to="/">Home</Link></div>
-        <div className="navItem"><Link to="#offerings">Offerings</Link></div>
-        <div className="navItem"><Link to="/blog">Blog</Link></div>
+        <div className="navItem"><Link to="/services">Services</Link></div>
+        <div className="navItem"><Link to="/trainings">Trainings</Link></div>
+        <div className="navItem" style={{display: 'none'}}><Link to="/blog">Blog</Link></div>
         <div className="navItem"><Link to="/about">About</Link></div>
-        <div className="navItem"><Link to="#">Contact</Link></div>
         <br />
         Washington, D.C.
         <p>Grounded IT Solutions LLC © {new Date().getFullYear()}</p>
