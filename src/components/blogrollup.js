@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from "react-redux"
 import { getBlogs } from '../state/actions'
 import BlogRollupItem from './blogrollupitem'
+import { Link } from 'gatsby'
 import _ from 'lodash'
 
 const BlogRollup = ({blogs, getBlogs, initialBlogRollupLoad, toggleInitialBlogRollupLoad, limit = 0}) => {
@@ -28,6 +29,12 @@ const BlogRollup = ({blogs, getBlogs, initialBlogRollupLoad, toggleInitialBlogRo
         })
         : "No blog posts yet."
       }
+      </React.Fragment>
+      <React.Fragment>
+        {limit ?
+          <Link className="right" to="/blog">Read more...</Link>
+          : ""
+        }
       </React.Fragment>
     </div>
   )

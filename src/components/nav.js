@@ -7,8 +7,7 @@ const Nav = () => {
     <nav className="topNav">
       <div className="navItem"><Link to="/"><div className='navImage'><Image className='navImage' src={require('../images/grit-logo/udemy_default_course_logo-old.png')} /></div></Link></div>
       <div className="navItem"><Link to="/">Home</Link></div>
-      <div className="navItem"><Link to="/services">Services</Link></div>
-      <div className="navItem"><Link to="/trainings">Trainings</Link></div>
+      <div className="navItem"><Link to="#offerings">Offerings</Link></div>
       <div className="navItem"><Link to="/blog">Blog</Link></div>
       <div className="navItem"><Link to="/about">About</Link></div>
     </nav>

@@ -24,8 +24,16 @@ html {
   }
 }
 
+section {
+  padding-bottom: 2em;
+}
+
 hr {
   color: #E3BB4D;
+}
+
+.right {
+  float: right;
 }
 
 .gridBanner {
