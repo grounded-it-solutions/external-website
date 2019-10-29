@@ -32,6 +32,33 @@ hr {
   color: #E3BB4D;
 }
 
+.sitemap .right {
+  float: right;
+  width: 45%;
+  max-height: 150px;
+}
+
+
+.sitemap .right .logo {
+  float: right;
+  max-height: 150px;
+  max-width: 150px;
+}
+
+.sitemap .left {
+  float: left;
+  width: 45%;
+}
+
+.sitemap .navItem {
+  width: 100%;
+}
+
+.sitemap {
+  padding: 2em;
+  font-size: 0.8em;
+}
+
 .right {
   float: right;
 }
@@ -213,6 +240,7 @@ hr {
   overflow: auto;
   position: fixed;
   background-color: white;
+  z-index: 1;
 }
 
 .blogRollupItem {

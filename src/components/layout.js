@@ -40,7 +40,9 @@ const Layout = ({ children }) => {
             {children}
           </main>
           <footer>
-            <SiteMap />
+            <section>
+              <SiteMap />
+            </section>
           </footer>
         </div>
       </div>
