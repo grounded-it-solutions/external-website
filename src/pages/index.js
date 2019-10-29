@@ -32,12 +32,14 @@ const IndexPage = () => (
     <section className="gridWrapper">
       <Link to="/services">
         <div className="gridBox gridboxCallout libraryBackground">
-          <h1>Codify Your Infrastructure</h1>
+          <h1>Codify Your<br /> Infrastructure</h1>
+          <span>A Grounded IT Service</span>
         </div>
       </Link>
       <Link to="/trainings">
         <div className="gridBox gridboxCallout coffeeBackground">
-          <h1>Take an Online Training</h1>
+          <h1>Take AWS DevOps for<br /> Front-end Developers</h1>
+          <span>A Grounded IT Training</span>
         </div>
       </Link>
     </section>
