@@ -65,3 +65,4 @@ typings/
 
 # bundles
 public/
+!public/index.html
