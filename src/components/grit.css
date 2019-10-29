@@ -32,6 +32,46 @@ hr {
   color: #E3BB4D;
 }
 
+.hide {
+  display: none;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.attnButton {
+  border-radius: 0.5em;
+  color: white;
+  background-color: #4D6EE3;
+  font-weight: bold;
+  border: 1px solid;
+  font-size: 1.1em;
+  padding: 0.5em;
+  box-shadow: 0.2em 0.2em 0.2em #967415;
+  text-shadow: 1px 1px 1px black;
+  transition: background-color 0.4s;
+}
+
+.attnButton:hover {
+  color: white;
+  transition: background-color 0.4s;
+  background-color: #967415;
+  font-weight: bold;
+  border: 1px solid;
+  font-size: 1.1em;
+  padding: 0.5em;
+  box-shadow: 0.2em 0.2em 0.2em #967415;
+  cursor: pointer;
+}
+
+.footnote {
+  color: grey;
+  font-size: 0.7em;
+}
+
 .sitemap .right {
   float: right;
   width: 45%;
@@ -127,6 +167,7 @@ hr {
 .infoSection {
   text-align: left;
   padding: 2em;
+  max-width: 960px;
 }
 
 .textCalloutSection {
@@ -172,11 +213,14 @@ hr {
 }
 
 .gridBox {
+  height: 300px;
+  padding: 1em;
+}
+
+.gridboxCallout {
   margin: auto;
   text-align: center;
   vertical-align: middle;
-  height: 300px;
-  padding: 1em;
 }
 
 .gridBox h1 {

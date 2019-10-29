@@ -31,12 +31,12 @@ const IndexPage = () => (
     </section>
     <section className="gridWrapper">
       <Link to="/services">
-        <div className="gridBox libraryBackground">
+        <div className="gridBox gridboxCallout libraryBackground">
           <h1>Codify Your Infrastructure</h1>
         </div>
       </Link>
       <Link to="/trainings">
-        <div className="gridBox coffeeBackground">
+        <div className="gridBox gridboxCallout coffeeBackground">
           <h1>Take an Online Training</h1>
         </div>
       </Link>
