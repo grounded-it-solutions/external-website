@@ -25,9 +25,9 @@ const IndexPage = () => (
       <h2>Why we do it</h2><hr />
       <h4><p>The diverse array of problems IT Managers face on a daily basis are both context-specific and consuming. Being buried in the day-to-day grind, it can be difficult to experiment with forward-thinking practices that could alleviate some of that pressure. Grounded IT recognizes that need and seeks to fill it, allowing IT organizations an avenue to level up widespread, progressive, IT practices. Hopefully, the options Grounded IT provides enables clients to outpace their competitors and deliver for their customers.</p></h4>
     </section>
-    <section id="offerings" className="textCalloutSection sectionTitle">
+    <section className="textCalloutSection sectionTitle">
       <h2>Offerings</h2>
-      <hr />
+      <hr id="offerings" />
     </section>
     <section className="gridWrapper">
       <Link to="/services">
