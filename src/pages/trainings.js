@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -13,10 +13,12 @@ const TrainingsPage = () => (
       <hr />
     </section>
     <section className="infoSection center">
-      <h3>AWS DevOps for Front-end Developers</h3>
-      <p>A hyper-accessible, pragmatic DevOps course. It's designed for Junior IT Professionals that want clarity around "DevOps" as well as practical tooling and skills and Front-end Web Developers that want to learn the tooling AWS provides to support their front-end codebase deployment workflows. This training is delivered through Udemy.</p>
+      <h3>AWS DevOps for Front-end Developers!</h3>
+      <p>A hyper-accessible, pragmatic DevOps course. It's designed for Junior IT Professionals that want clarity around "DevOps" with practical tooling and skills for their workplace. Front-end Web Developers will learn the DevOps tooling AWS provides to support their front-end codebase deployment workflows. This training is delivered through Udemy.</p>
       <div className="center">
-        <button className="attnButton">Learn more about this course!*</button>
+        <OutboundLink href="https://www.udemy.com/course/aws-devops-for-front-end-developers/" alt="Link to Udemy course, AWS DevOps for Front-end Developers" target="_blank">
+          <button className="attnButton">Learn more about this course!*</button>
+        </OutboundLink>
         <p className="footnote">*Will open a new page on a new site.</p>
       </div>
     </section>
