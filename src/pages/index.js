@@ -43,12 +43,12 @@ const IndexPage = () => (
         </div>
       </Link>
     </section>
-    <section className="textCalloutSection sectionTitle">
+    <section className="textCalloutSection sectionTitle" style={{display: 'none'}}>
       <h2>Latest Articles</h2>
       <hr />
     </section>
-    <section>
-      <ConnectedBlogRollup limit={3} />
+    <section style={{display: 'none'}}>
+      <ConnectedBlogRollup limit={0} />
     </section>
 
   </Layout>
