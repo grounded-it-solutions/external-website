@@ -13,16 +13,14 @@ const BlogPostContent = ({content = '<div>This blog post has no content</div>'})
     </div>
 )
 
-const BlogPost = ( pageContext ) => (
-  <Layout>
-    <SEO title="Blog post" />
-    <BlogPostContent content={pageContext.pageResources.json.pageContext.content} />
-    {/*<pre>{JSON.stringify(pageContext.pageResources.json.pageContext.content, null, 2)}</pre>
-  
-      Temporarily left in for dev and debugging purposes
-    */} 
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+const BlogPost = ( pageContext ) => {
+  return (
+    <Layout>
+      <SEO title="Blog post" />
+      <BlogPostContent content={pageContext.content} />
+      <Link to="/">Go back to the homepage</Link>
+    </Layout>
+  )
+}
 
 export default BlogPost
