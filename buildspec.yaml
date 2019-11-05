@@ -3,6 +3,8 @@ version: 0.2
 env: 
   variables: # Values set in CodeBuild configuration. Including explicit assignments here for readability. Technically, the variables can be used without this explicit assignment.
     TARGET_S3_BUCKET: ${TARGET_S3_BUCKET}
+    AWS_ENVIRONMENT: ${AWS_ENVIRONMENT}  
+    # AWS_CLOUDFRONT_DISTRIBUTION_ID: ${AWS_CLOUDFRONT_DISTRIBUTION_ID} # If the build has a CloudFront distribution it should be set in the CodeBuild build settings. Leaving this uncommented to indicate it will effect the run of the build if set. If it's not set, the command to invalidate the CloudFront cache will not be run. 
 
 phases:
   install:
@@ -11,12 +13,14 @@ phases:
     commands:
       - npm ci # npm ci installs packages referenced in the package-lock.json, effectively freezing the packages that are installed to specific versions.
       - npm install -g gatsby-cli
+      - echo AWS_ENVIRONMENT=${AWS_ENVIRONMENT} >> .env.${AWS_ENVIRONMENT} && echo TARGET_S3_BUCKET=${TARGET_S3_BUCKET} >> .env.${AWS_ENVIRONMENT} && CODEBUILD_BUILD_ID=${CODEBUILD_BUILD_ID} >> .env.${AWS_ENVIRONMENT} && CODEBUILD_START_TIME=${CODEBUILD_START_TIME} >> .env.${AWS_ENVIRONMENT} 
   build:
     commands:
       - gatsby build
   post_build:
     commands:
       - aws s3 sync ./public/ "s3://${TARGET_S3_BUCKET}" --acl=public-read --delete
+      - if [ -z "$AWS_CLOUDFRONT_DISTRIBUTION_ID" ]; then echo "No AWS CloudFront distribution to invalidate"; else aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths /*; fi 
 
 cache:
   paths:
