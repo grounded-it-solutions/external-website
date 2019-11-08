@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { OutboundLink } from 'gatsby-plugin-gtag'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
