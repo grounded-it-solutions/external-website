@@ -51,7 +51,7 @@ module.exports = {
       options: {
         trackingId: "UA-151183277-1",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
+        head: true,
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
@@ -69,7 +69,7 @@ module.exports = {
         // Any additional optional fields
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "example.com",
+        // cookieDomain: "groundedit.solutions",
       },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
