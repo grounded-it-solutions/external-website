@@ -14,6 +14,11 @@ import SiteMap from "./sitemap"
 import "./layout.css"
 import "./grit.css"
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fab)
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

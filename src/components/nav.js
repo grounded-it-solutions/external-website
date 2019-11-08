@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "gatsby"
 import Image from "../components/image"
+import { OutboundLink } from "gatsby-plugin-gtag"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = () => {
   return (
@@ -11,6 +13,11 @@ const Nav = () => {
       <div className="navItem"><Link to="/trainings">Trainings</Link></div>
       <div className="navItem" style={{display: 'none'}}><Link to="/blog">Blog</Link></div>
       <div className="navItem"><Link to="/about">About</Link></div>
+      <div className="right">
+        <OutboundLink className="navItem" href="https://twitter.com/grounded_it" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter']} /></OutboundLink>
+        <OutboundLink className="navItem" href="https://www.linkedin.com/company/grounded-it-solutions/" target="_blank"><FontAwesomeIcon icon={['fab', 'linkedin']} /></OutboundLink>
+        <OutboundLink className="navItem" href="#" style={{display: 'none'}}><FontAwesomeIcon icon={['fab', 'youtube']} /></OutboundLink>
+      </div>
     </nav>
   )
 }
