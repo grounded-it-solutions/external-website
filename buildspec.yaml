@@ -21,7 +21,3 @@ phases:
     commands:
       - aws s3 sync ./public/ "s3://${TARGET_S3_BUCKET}" --acl=public-read --delete
       - if [ -z "$AWS_CLOUDFRONT_DISTRIBUTION_ID" ]; then echo "No AWS CloudFront distribution to invalidate"; else aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths /*; fi 
-
-cache:
-  paths:
-    - 'node_modules/**/*'
