@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from "gatsby"
 import Image from "../components/image"
-import { OutboundLink } from "gatsby-plugin-gtag"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = () => {
   return (
     <nav className="topNav">
-      <div className="navItem"><Link to="/"><div className='navImage'><Image className='navImage' src={require('../images/grit-logo/udemy_default_course_logo-old.png')} /></div></Link></div>
+      <div className="navItem"><Link to="/"><div className='navImage'><Image className='navImage' src={require('../images/grit-logo/udemy_default_course_logo.svg')} /></div></Link></div>
       <div className="navItem"><Link to="/">Home</Link></div>
       <div className="navItem"><Link to="/services">Services</Link></div>
       <div className="navItem"><Link to="/trainings">Trainings</Link></div>
