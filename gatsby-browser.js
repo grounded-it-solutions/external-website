@@ -6,8 +6,38 @@
 
 import React from "react"
 import { Provider } from "react-redux"
-
 import createStore from "./src/state/createStore"
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory();
+
+const path = (/#!(\/.*)$/.exec(location.hash) || [])[1];
+if (path) {
+  history.replace(path);
+}
+
+/* ^ This bit is a quick hack to get website links to anything besides the homepage (i.e. index.html). The two solutions I saw that I like are either to prerender all the HTML of the website (which I like more but takes more effort per page) or to rewrite the requests to the S3 bucket to add "#!" with the requested resource name, then rewrite the url here without the "#!". This should also resolve serving robots.txt when the website is crawled by search engines. The redirection block of rules to include in the S3 bucket's website configuration is the following: 
+<RoutingRules>
+  <RoutingRule>
+    <Condition>
+      <HttpErrorCodeReturnedEquals>404</HttpErrorCodeReturnedEquals>
+    </Condition>
+    <Redirect>
+      <HostName>myhostname.com</HostName>
+      <ReplaceKeyPrefixWith>#!/</ReplaceKeyPrefixWith>
+    </Redirect>
+</RoutingRule>
+<RoutingRule>
+    <Condition>
+      <HttpErrorCodeReturnedEquals>403</HttpErrorCodeReturnedEquals>
+    </Condition>
+    <Redirect>
+      <HostName>myhostname.com</HostName>
+      <ReplaceKeyPrefixWith>#!/</ReplaceKeyPrefixWith>
+    </Redirect>
+  </RoutingRule>
+</RoutingRules>
+*/
 
 // eslint-disable-next-line react/display-name,react/prop-types
 const wrapWithProvider = ({ element }) => {

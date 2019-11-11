@@ -20,6 +20,7 @@
     "gatsby-plugin-sharp": "^2.2.31",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-sharp": "^2.2.23",
+    "history": "^4.10.1",
     "html-react-parser": "^0.9.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
@@ -28,7 +29,7 @@
     "react-html-parser": "^2.0.2",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
-    "showdown": "^1.9.0"
+    "showdown": "^1.9.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
