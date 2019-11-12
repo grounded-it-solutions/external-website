@@ -6,6 +6,7 @@
 
 import React from "react"
 import { Provider } from "react-redux"
+<<<<<<< HEAD
 import createStore from "./src/state/createStore"
 import { createBrowserHistory } from 'history';
 import {pageList} from './pageList.json'
@@ -68,6 +69,10 @@ if (path.length > 0) { // implies index was not requested
   </RoutingRule>
 </RoutingRules>
 */
+=======
+
+import createStore from "./src/state/createStore"
+>>>>>>> parent of 36a2718... Should resolve an integration issue linking directly to pages
 
 // eslint-disable-next-line react/display-name,react/prop-types
 const wrapWithProvider = ({ element }) => {
