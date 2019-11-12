@@ -2,19 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const fs = require('fs')
-
-fs.readdir('./src/pages', (err, pageList) => {
-  if(err) {
-    return `Reading file names from pages directory failed ${err}`
-  }
-  // console.log(JSON.stringify(pageList))
-  fs.writeFile('./pageList.json', `{"pageList": ${JSON.stringify(pageList)}}`, (err) => {
-    if(err)
-      console.log(`Writing page list failed: ${err}`)
-  })
-})
-
 module.exports = {
   siteMetadata: {
     title: `Grounded IT Solutions`,
