@@ -1,3 +1,6 @@
+# Application-specific files
+page-list.json
+
 # Logs
 logs
 *.log
