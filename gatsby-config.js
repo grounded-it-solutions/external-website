@@ -4,6 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
+    siteUrl: process.env.SITE_URL,
     title: `Grounded IT Solutions`,
     description: `IT, pragmatically.`,
     author: `@trycrmr`,
@@ -72,7 +73,8 @@ module.exports = {
           unsafe: false,
         }
       }
-    }
+    },
+    'gatsby-plugin-robots-txt'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
