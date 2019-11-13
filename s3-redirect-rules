@@ -1,0 +1,10 @@
+  <RoutingRules>
+    <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>page-data//page-data.json</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyPrefixWith>page-data/index/page-data.json</ReplaceKeyPrefixWith>
+    </Redirect>
+    </RoutingRule>
+  </RoutingRules>
