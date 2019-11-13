@@ -28,6 +28,7 @@ function SEO({ description, lang, meta, title }) {
   const metaDescription = description || site.siteMetadata.description
 
   return (
+    <>
     <Helmet
       htmlAttributes={{
         lang,
@@ -69,6 +70,20 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     />
+    <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@type": "Company",
+      "url": "http://groundedit.solutions",
+      "name": "Grounded IT Solutions",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@groundedit.solutions",
+        "contactType": "Inquires"
+      }
+    }
+    `}</script>
+    </>
   )
 }
 
