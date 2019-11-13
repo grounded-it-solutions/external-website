@@ -21,4 +21,5 @@ phases:
   post_build:
     commands:
       - aws s3 sync ./public/ "s3://${TARGET_S3_BUCKET}" --acl=public-read --delete
+      - aws s3 cp ./public/ "s3://${TARGET_S3_BUCKET}" --exclude '*' --include '*.json' --content-type 'application/json' --acl=public-read --metadata-directive 'REPLACE'
       - if [ -z "$AWS_CLOUDFRONT_DISTRIBUTION_ID" ]; then echo "No AWS CloudFront distribution to invalidate"; else aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths /*; fi 
