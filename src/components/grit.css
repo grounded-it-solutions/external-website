@@ -149,23 +149,55 @@ h4,h5,h6 {
 }
 
 .banner {
-  /* width: 100%; */
-  /* height: 400px; */
-  /* border: 2px solid pink; */
   margin: auto;
-  /* text-align: center; */
   vertical-align: middle;
 }
 
-.deskBackground {
-  background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.35)
-    ),
-    url(../images/background-beverage-brown-414645.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
+/* For the above the fold image, serve different size images depending on the size of the screen */
+
+/*
+Note that lighthouse audit suggests using "next-gen image formats", such as theirs (Google's), WebP. The ones that are suggested don't have ubiquitious browser support. The fallback is to use different css classes based on the browser being used, and I don't want to play that game at this time. Basically, to use webp without a fallback, the webp images wouldn't load in Safari. Anyone looking at the website on an iPhone wouldn't see the images. So a fallback is 100% necessary to use next gen images, IMO. 
+*/
+@media (max-width: 889px) {
+  /* //.deskbackground w/ 890px image */
+  .deskBackground {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      ),
+      url(../images/background-beverage-brown-414645_j12p73_c_scale,w_890.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 890px) and (max-width: 1462px) {
+  /* //.deskbackground w/ 1463 image */
+  .deskBackground {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      ),
+      url(../images/background-beverage-brown-414645_j12p73_c_scale,w_1463.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1410px) {
+  /* .deskbackground w/ big imagepx image */
+  .deskBackground {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      ),
+      url(../images/background-beverage-brown-414645_j12p73_c_scale,w_1920.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .infoSection {
