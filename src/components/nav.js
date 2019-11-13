@@ -14,8 +14,8 @@ const Nav = () => {
       <div className="navItem" style={{display: 'none'}}><Link to="/blog">Blog</Link></div>
       <div className="navItem"><Link to="/about">About</Link></div>
       <div className="socials">
-        <OutboundLink className="navItem" href="https://twitter.com/grounded_it" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'twitter']} /></OutboundLink>
-        <OutboundLink className="navItem" href="https://www.linkedin.com/company/grounded-it-solutions/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'linkedin']} /></OutboundLink>
+        <OutboundLink className="navItem" href="https://twitter.com/grounded_it" target="_blank" rel="noopener noreferrer" alt="Link to Grounded IT Solutions Twitter account" aria-label="Link to Grounded IT Solutions Twitter account"><FontAwesomeIcon icon={['fab', 'twitter']} /></OutboundLink>
+        <OutboundLink className="navItem" href="https://www.linkedin.com/company/grounded-it-solutions/" target="_blank" rel="noopener noreferrer" alt="Link to Grounded IT Solutions LinkedIn account" aria-label="Link to Grounded IT Solutions Twitter account"><FontAwesomeIcon icon={['fab', 'linkedin']} /></OutboundLink>
         <OutboundLink className="navItem" href="#" style={{display: 'none'}}><FontAwesomeIcon icon={['fab', 'youtube']} /></OutboundLink>
       </div>
     </nav>
