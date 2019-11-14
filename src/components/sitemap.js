@@ -16,7 +16,7 @@ const SiteMap = () => {
         Washington, D.C.
         <p>Grounded IT Solutions LLC © {new Date().getFullYear()}</p>
       </div>
-      <div className="right"><Image className="logo" src={require('../images/grit-logo/logo_transparent.png')} alt="Grounded IT Solutions logo" aria-label="Grounded IT Solutions logo" /></div>
+      <div className="right"><Image className="logo" src={require('../images/grit-logo/logo_transparent.png')} alt={"Grounded IT Solutions logo"} /></div>
     </div>
   )
 }

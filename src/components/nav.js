@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Nav = () => {
   return (
     <nav className="topNav">
-      <div className="navItem"><Link to="/"><div className='navImage'><Image className='navImage' src={require('../images/grit-logo/udemy_default_course_logo.svg')} alt="Grounded IT Solutions logo" aria-label="Grounded IT Solutions logo" /></div></Link></div>
+      <div className="navItem"><Link to="/"><div className='navImage'><Image className='navImage' src={require('../images/grit-logo/udemy_default_course_logo.svg')} alt={"Grounded IT Solutions logo"} /></div></Link></div>
       <div className="navItem"><Link to="/">Home</Link></div>
       <div className="navItem"><Link to="/services">Services</Link></div>
       <div className="navItem"><Link to="/trainings">Trainings</Link></div>
