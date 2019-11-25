@@ -16,7 +16,7 @@ const TrainingsPage = () => (
       <h3>AWS DevOps for Front-end Developers!</h3>
       <p>A hyper-accessible, pragmatic DevOps course. It's designed for Junior IT Professionals that want clarity around "DevOps" with practical tooling and skills for their workplace. Front-end Web Developers will learn the DevOps tooling AWS provides to support their front-end codebase deployment workflows. This training is delivered through Udemy.</p>
       <div className="center">
-        <OutboundLink href="https://www.udemy.com/course/aws-devops-for-front-end-developers/" alt="Link to Udemy course, AWS DevOps for Front-end Developers" target="_blank" rel="noopener noreferrer">
+        <OutboundLink href="https://www.udemy.com/course/aws-devops-for-front-end-developers/?referralCode=FA58A3966A0E35B97D4D" alt="Link to Udemy course, AWS DevOps for Front-end Developers" target="_blank" rel="noopener noreferrer">
           <button className="attnButton">Learn more about this course!*</button>
         </OutboundLink>
         <p className="footnote">*Will open a new page on a new site.</p>
