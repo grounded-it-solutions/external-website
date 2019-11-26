@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 import Image from "../components/image"
-import { OutboundLink } from "gatsby-plugin-google-gtag"
+import { OutboundLink } from "gatsby-plugin-gtag"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = () => {
