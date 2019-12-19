@@ -13,7 +13,7 @@ const ServicesPage = () => (
     </section>
     <section className="infoSection center">
       <h3>Freelance Effort</h3>
-      <p>Grounded IT Solutions looks to help resolve unique client problems ASAP. Via Upwork, Grounded IT Solutions can provide the quick burst of effort you need to resolve a pressing business problem.</p>
+      <p>Grounded IT Solutions helps resolve unique client problems ASAP. Via Upwork, Grounded IT Solutions can provide the quick burst of effort you need to resolve a pressing business problem.</p>
       <div className="center">
         <OutboundLink href='https://www.upwork.com/o/profiles/users/_~01965c424fd6393a7d/' target="_blank" rel="noopener noreferrer">
           <button className="attnButton">Reach out via Upwork!*</button>
