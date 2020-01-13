@@ -21,7 +21,7 @@ phases:
   post_build:
     commands:
       - aws s3 sync ./public/ "s3://${TARGET_S3_BUCKET}" --acl=public-read --delete
-      - echo 'Setting headers for caching per https://www.gatsbyjs.org/docs/caching/ ...' # /static/* is handled as a CloudFront because the content type can't be assumed and could be anything
+      - echo 'Setting headers for caching per https://www.gatsbyjs.org/docs/caching/ ...' # /static/* is handled by CloudFront because the content type can't be assumed and could be anything
       - aws s3 cp ./public/ "s3://${TARGET_S3_BUCKET}" --metadata-directive 'REPLACE' --exclude '*' --include '*.json' --content-type 'application/json' --acl=public-read --recursive
       - aws s3 cp ./public/ "s3://${TARGET_S3_BUCKET}" --metadata-directive 'REPLACE' --exclude '*' --include '*.html' --cache-control public,no-cache --content-type text/html --acl=public-read --recursive
       - aws s3 cp ./public/ "s3://${TARGET_S3_BUCKET}" --metadata-directive 'REPLACE' --exclude '*' --include '*.js' --cache-control public,max-age=31536000,immutable --content-type application/javascript --acl=public-read --recursive
